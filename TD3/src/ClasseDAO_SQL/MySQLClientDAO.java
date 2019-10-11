@@ -44,7 +44,11 @@ public class MySQLClientDAO extends ClientDAO{
 			requete.setString(8, objet.getPays());
 
 		 nbLignes = requete.executeUpdate();
-
+		 ResultSet res = requete.getGeneratedKeys();
+		 if (res.next())
+		 	{
+		 	int cle = res.getInt(1);
+		 	}
 			if (requete != null)
 				requete.close();
 			if (laConnexion != null)
