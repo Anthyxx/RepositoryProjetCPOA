@@ -9,6 +9,7 @@ public class TestDAOListeMemoireClient {
 	
 	@Test
 	public void testadd() {
+		
 		ListeMemoireClientDAO.getInstance().delete(new Client(0,"test","test","test","test","test","test","test"));
 		assertEquals(true,ListeMemoireClientDAO.getInstance().create(new Client(0,"test","test","test","test","test","test","test")));
 		ListeMemoireClientDAO.getInstance().delete(new Client(0,"test","test","test","test","test","test","test"));
@@ -17,7 +18,7 @@ public class TestDAOListeMemoireClient {
 	@Test
 	public void testUpdate() {
 		ListeMemoireClientDAO.getInstance().create(new Client(0,"test","test","test","test","test","test","test"));
-		assertEquals(true,ListeMemoireClientDAO.getInstance().update(new Client(0,"tset","tset","tset","tset","tset","tset","tset")));
+		assertEquals(true,ListeMemoireClientDAO.getInstance().update(new Client(0,"test","test","test","test","test","test","test")));
 		ListeMemoireClientDAO.getInstance().delete(new Client(0,"test","test","test","test","test","test","test"));
 	}
 	
@@ -30,7 +31,6 @@ public class TestDAOListeMemoireClient {
 	@Test
 	public void testGetById() {
 		Client C = new Client(0,"test","test","test","test","test","test","test");
-		ListeMemoireClientDAO.getInstance().delete(C);
 		ListeMemoireClientDAO.getInstance().create(C);
 		assertEquals(C,ListeMemoireClientDAO.getInstance().getById(C.getId_client()));
 	}

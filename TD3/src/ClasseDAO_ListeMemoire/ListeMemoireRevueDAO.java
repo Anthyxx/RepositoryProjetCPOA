@@ -69,13 +69,19 @@ private static ListeMemoireRevueDAO instance;
 
 	@Override
 	public Revue getById(int id) {
-		// TODO Stub de la mÃ©thode gÃ©nÃ©rÃ© automatiquement
-		int idx = id;
+		// TODO Stub de la méthode généré automatiquement
+		/*int idx = id;
 		if (idx == -1) {
-			throw new IllegalArgumentException("Aucun objet ne possÃ¨de cet identifiant");
+			throw new IllegalArgumentException("Aucun objet ne possède cet identifiant");
 		} else {
 			return this.donnees.get(idx);
+		}*/
+		for(int i=0;i<this.donnees.size();i++) {
+			if((this.donnees.get(i).getId_revue()==id)) {
+				return this.donnees.get(i);
+			}
 		}
+		return null;
 	}
 
 	@Override
