@@ -1,5 +1,5 @@
 package TestMySQLDAO;
-//test
+
 import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 import ClasseDAO_SQL.MySQLClientDAO;
@@ -14,7 +14,6 @@ public class TestDAOMySQLClient {
 		MySQLClientDAO.getInstance().delete(new Client(0,"test","test","test","test","test","test","test"));
 	}
 	
-	
 	@Test
 	public void testUpdate() {
 		MySQLClientDAO.getInstance().create(new Client(0,"test","test","test","test","test","test","test"));
@@ -28,8 +27,6 @@ public class TestDAOMySQLClient {
 		assertEquals(true,MySQLClientDAO.getInstance().delete(new Client(0,"test","test","test","test","test","test","test")));
 	}
 	
-
-
 	@Test
 	public void testGetById() {
 		Client C = new Client(0,"test","test","test","test","test","test","test");

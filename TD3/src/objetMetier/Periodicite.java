@@ -31,6 +31,26 @@ public class Periodicite {
 	public String toString() {
 		return "Periodicite [id_periodicite=" + id_periodicite + ", libelle=" + libelle + "]";
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Periodicite other = (Periodicite) obj;
+		if (id_periodicite != other.id_periodicite)
+			return false;
+		if (libelle == null) {
+			if (other.libelle != null)
+				return false;
+		} else if (!libelle.equals(other.libelle))
+			return false;
+		return true;
+	}
 	
 	
 
